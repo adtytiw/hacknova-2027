@@ -4,8 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 
-const STORAGE_KEY = "ticket-notice-dismissed";
-const EVENTBRITE_URL = "https://www.eventbrite.com/e/mit-bitcoin-expo-2026-tickets-1984845280665";
+const STORAGE_KEY = "hacknova-unstop-notice-dismissed";
+const REGISTER_URL = "https://github.com/adtytiw";
 
 export function TicketNotice() {
   const [visible, setVisible] = useState(() => {
@@ -56,23 +56,23 @@ export function TicketNotice() {
                   </svg>
                 </div>
                 <h3 className="text-foreground text-sm font-semibold">
-                  Tickets moved to Eventbrite
+                  Register now at Unstop
                 </h3>
               </div>
               <p className="text-muted mt-2 text-xs leading-relaxed">
-                Already purchased via MIT Engage? Your tickets are still valid. No action needed.
+                Registrations for HackNova 2027 are officially open. Secure your team&apos;s spot and participate in the 36-hour hackathon!
               </p>
 
               {/* Actions */}
               <div className="mt-3 flex items-center gap-3">
                 <Link
-                  href={EVENTBRITE_URL}
+                  href={REGISTER_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={dismiss}
                   className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-lg px-3.5 py-1.5 text-xs font-medium transition-colors"
                 >
-                  Get Tickets
+                  Register
                 </Link>
                 <button
                   onClick={dismiss}
