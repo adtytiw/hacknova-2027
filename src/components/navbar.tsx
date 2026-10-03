@@ -9,23 +9,36 @@ import { UserPlus } from "lucide-react";
 
 const EVENT_DETAILS = {
   title: "HackNova 2027",
-  description:
-    "HackNova 2027 event details will be announced soon.",
+  description: "HackNova 2027 event details will be announced soon.",
   location: "Bharati Vidyapeeth Deemed University",
 };
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/#schedule", label: "Schedule" },
-  { href: "/#themes", label: "Themes" },
-  { href: "/#timeline", label: "Timeline" },
-  { href: "/#rules", label: "Rules" },
+  { href: "/schedule", label: "Schedule" },
+  { href: "/sponsors", label: "Sponsors" },
 ];
 
 const menuContainerVariants: Variants = {
-  closed: { opacity: 0, scale: 0.96, y: -8, transition: { duration: 0.15, ease: "easeIn" } },
-  open: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.15, ease: "easeOut" } },
+  closed: {
+    opacity: 0,
+    scale: 0.96,
+    y: -8,
+    transition: { duration: 0.15, ease: "easeIn" },
+  },
+  open: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.15, ease: "easeOut" },
+  },
 };
+
+const LINK_ITEM = "rounded-lg px-4 py-2 text-sm font-medium whitespace-nowrap";
+const REGISTER_ITEM =
+  "bg-accent text-accent-foreground hover:bg-accent/90 shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors";
+// Minimum breathing room between the logo, links and actions groups once they are tight.
+const GROUP_GAP = 16;
 
 function generateICS(): string {
   const start = "20270110T090000";
@@ -69,7 +82,9 @@ function AddToCalendarDropdown() {
   }, []);
 
   const handleDownloadICS = () => {
-    const blob = new Blob([generateICS()], { type: "text/calendar;charset=utf-8" });
+    const blob = new Blob([generateICS()], {
+      type: "text/calendar;charset=utf-8",
+    });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -163,6 +178,7 @@ function MobileMenu({
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!isOpen) return;
     function handleClickOutside(event: MouseEvent) {
       const target = event.target as Node;
       if (
@@ -173,66 +189,68 @@ function MobileMenu({
       )
         onClose();
     }
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.body.style.overflow = "hidden";
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.body.style.overflow = "";
-    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen, onClose, toggleButtonRef]);
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
-          />
-          <motion.div
-            ref={menuRef}
-            variants={menuContainerVariants}
-            initial="closed"
-            animate="open"
-            exit="closed"
-            className="fixed top-[5.5rem] right-4 z-50 w-64"
-          >
-            <div className="bg-surface/95 border-border/50 overflow-hidden rounded-2xl border shadow-2xl shadow-black/50 backdrop-blur-xl">
-              <nav className="p-3">
-                {NAV_LINKS.map((link) => {
-                  const isActive = pathname === link.href;
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={onClose}
-                      className={`block rounded-xl px-4 py-3 text-[15px] font-medium transition-colors ${isActive ? "bg-background/90 text-foreground" : "text-muted hover:text-accent hover:bg-white/5"}`}
-                    >
-                      {link.label}
-                    </Link>
-                  );
-                })}
-                <div className="border-border/30 mt-2 border-t pt-2">
+        <motion.div
+          ref={menuRef}
+          variants={menuContainerVariants}
+          initial="closed"
+          animate="open"
+          exit="closed"
+          className="absolute top-full right-0 z-50 mt-2 w-64 max-w-[calc(100vw-2rem)]"
+        >
+          <div className="bg-surface/95 border-border/50 overflow-hidden rounded-2xl border shadow-2xl shadow-black/50 backdrop-blur-xl">
+            <nav className="p-3">
+              {NAV_LINKS.map((link) => {
+                const isActive = pathname === link.href;
+                return (
                   <Link
-                    href="https://github.com/adtytiw"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    key={link.href}
+                    href={link.href}
                     onClick={onClose}
-                    className="bg-accent text-accent-foreground hover:bg-accent/90 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-[15px] font-medium transition-colors"
+                    className={`block rounded-xl px-4 py-3 text-[15px] font-medium transition-colors ${isActive ? "bg-background/90 text-foreground" : "text-muted hover:text-accent hover:bg-white/5"}`}
                   >
-                    <UserPlus className="h-5 w-5" aria-hidden="true" />
-                    Register
+                    {link.label}
                   </Link>
-                </div>
-              </nav>
-            </div>
-          </motion.div>
-        </>
+                );
+              })}
+              <div className="border-border/30 mt-2 border-t pt-2">
+                <Link
+                  href="https://github.com/adtytiw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onClose}
+                  className="bg-accent text-accent-foreground hover:bg-accent/90 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-[15px] font-medium transition-colors"
+                >
+                  <UserPlus className="h-5 w-5" aria-hidden="true" />
+                  Register
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+function MobileMenuBackdrop({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          onClick={onClose}
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+        />
       )}
     </AnimatePresence>
   );
@@ -241,36 +259,68 @@ function MobileMenu({
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMeasured, setIsMeasured] = useState(false);
   const pathname = usePathname();
   const mobileMenuToggleRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const logoRef = useRef<HTMLAnchorElement>(null);
-  const linksRef = useRef<HTMLDivElement>(null);
-  const actionsRef = useRef<HTMLDivElement>(null);
+  const calendarRef = useRef<HTMLSpanElement>(null);
+  const ghostRef = useRef<HTMLDivElement>(null);
 
+  const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
+
+  // Every width below is measured from an element that stays mounted in both layouts:
+  // the logo, the calendar control, and the ghost replica of the collapsed links/Register.
+  // Measuring the live actions group instead would report 0 width once collapsed and make
+  // the navbar flip back to the overflowing desktop layout.
   const checkOverflow = useCallback(() => {
     const nav = navRef.current;
     const logo = logoRef.current;
-    const links = linksRef.current;
-    const actions = actionsRef.current;
-    if (!nav || !logo || !links || !actions) return;
-    // 48px for inner padding + gaps between the three sections
-    const needed = logo.offsetWidth + links.scrollWidth + actions.offsetWidth + 48;
-    const collapsed = nav.offsetWidth < needed;
-    setIsCollapsed(collapsed);
-    if (!collapsed) setIsMobileMenuOpen(false);
+    const calendar = calendarRef.current;
+    const ghost = ghostRef.current;
+    if (!nav || !logo || !calendar || !ghost) return;
+    const styles = getComputedStyle(nav);
+    const paddingX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+    const needed =
+      paddingX + logo.offsetWidth + calendar.offsetWidth + ghost.offsetWidth + GROUP_GAP;
+    const collapsed = nav.clientWidth < needed;
+    setIsCollapsed((prev) => (prev === collapsed ? prev : collapsed));
+    setIsMobileMenuOpen((prev) => (collapsed ? prev : false));
+    setIsMeasured((prev) => (prev ? prev : true));
   }, []);
 
   useEffect(() => {
     const nav = navRef.current;
     if (!nav) return;
+    // ResizeObserver delivers an initial callback on observe, so no manual first pass.
     const observer = new ResizeObserver(checkOverflow);
     observer.observe(nav);
-    checkOverflow();
-    return () => observer.disconnect();
+    let cancelled = false;
+    document.fonts?.ready.then(() => {
+      if (!cancelled) checkOverflow();
+    });
+    return () => {
+      cancelled = true;
+      observer.disconnect();
+    };
   }, [checkOverflow]);
 
-  // Close mobile menu when switching to expanded layout — done inside checkOverflow to avoid cascading effect
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMobileMenuOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMobileMenuOpen]);
+
+  // Hidden until the first measurement so a phone never paints the overflowing desktop row.
+  const visibility = isMeasured ? "" : "invisible";
 
   return (
     <>
@@ -301,15 +351,17 @@ export function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop links — hidden when collapsed, but always measured via invisible ref below */}
-          <div className={`items-center gap-1 ${isCollapsed ? "hidden" : "flex"}`}>
+          {/* Desktop links */}
+          <div
+            className={`${isCollapsed ? "hidden" : "flex"} ${visibility} shrink-0 items-center gap-1`}
+          >
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${isActive ? "bg-background/80 text-foreground backdrop-blur-sm" : "text-muted hover:text-accent"}`}
+                  className={`${LINK_ITEM} transition-all ${isActive ? "bg-background/80 text-foreground backdrop-blur-sm" : "text-muted hover:text-accent"}`}
                 >
                   {link.label}
                 </Link>
@@ -317,44 +369,48 @@ export function Navbar() {
             })}
           </div>
 
-          {/* Invisible measurement div — always in DOM, never displayed, used by ResizeObserver */}
+          {/* Measurement replica of the collapsed links + Register button — never painted,
+              never interactive, always laid out so widths stay stable while hidden. */}
           <div
-            ref={linksRef}
-            className="pointer-events-none invisible fixed top-0 left-0 flex items-center gap-1"
+            ref={ghostRef}
             aria-hidden
+            className="pointer-events-none invisible fixed top-0 left-0 flex items-center gap-4"
           >
-            {NAV_LINKS.map((link) => (
-              <span
-                key={link.href}
-                className="rounded-lg px-4 py-2 text-sm font-medium whitespace-nowrap"
-              >
-                {link.label}
-              </span>
-            ))}
+            <div className="flex items-center gap-1">
+              {NAV_LINKS.map((link) => (
+                <span key={link.href} className={LINK_ITEM}>
+                  {link.label}
+                </span>
+              ))}
+            </div>
+            <span className={`${REGISTER_ITEM} flex`}>
+              <UserPlus className="h-5 w-5" aria-hidden="true" />
+              Register
+            </span>
           </div>
 
-          {/* Desktop actions */}
-          <div ref={actionsRef} className={`items-center gap-4 ${isCollapsed ? "hidden" : "flex"}`}>
-            <AddToCalendarDropdown />
+          {/* Right cluster — one flex child so justify-between keeps it pinned right.
+              The calendar control stays mounted in both layouts, only Register and the
+              hamburger swap, which keeps the calendar beside the menu button when collapsed. */}
+          <div className={`flex shrink-0 items-center ${isCollapsed ? "gap-3" : "gap-4"}`}>
+            <span ref={calendarRef} className="flex items-center">
+              <AddToCalendarDropdown />
+            </span>
             <Link
               href="https://github.com/adtytiw"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+              className={`${REGISTER_ITEM} ${isCollapsed ? "hidden" : "flex"} ${visibility}`}
             >
               <UserPlus className="h-5 w-5" aria-hidden="true" />
               Register
             </Link>
-          </div>
-
-          {/* Hamburger — shown when collapsed */}
-          <div className={`items-center gap-3 ${isCollapsed ? "flex" : "hidden"}`}>
-            <AddToCalendarDropdown />
             <button
               ref={mobileMenuToggleRef}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-muted hover:text-accent p-2 transition-colors"
+              className={`text-muted hover:text-accent p-2 transition-colors ${isCollapsed ? "block" : "hidden"} ${visibility}`}
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
             >
               <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMobileMenuOpen ? (
@@ -376,12 +432,13 @@ export function Navbar() {
             </button>
           </div>
         </nav>
+        <MobileMenu
+          isOpen={isMobileMenuOpen}
+          onClose={closeMobileMenu}
+          toggleButtonRef={mobileMenuToggleRef}
+        />
       </motion.header>
-      <MobileMenu
-        isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
-        toggleButtonRef={mobileMenuToggleRef}
-      />
+      <MobileMenuBackdrop isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
     </>
   );
 }

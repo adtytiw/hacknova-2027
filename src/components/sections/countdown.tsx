@@ -11,7 +11,7 @@ interface TimeUnit {
 function TimeBlock({ value, label }: TimeUnit) {
   return (
     <div className="flex flex-col items-center">
-      <div className="bg-surface border-border relative h-20 w-16 overflow-hidden rounded-xl border sm:h-28 sm:w-24 md:h-32 md:w-28">
+      <div className="bg-surface border-border relative h-20 w-14 overflow-hidden rounded-xl border sm:h-28 sm:w-24 md:h-32 md:w-28">
         <AnimatePresence mode="popLayout">
           <motion.div
             key={value}
@@ -30,7 +30,7 @@ function TimeBlock({ value, label }: TimeUnit) {
         {/* Subtle line in middle */}
         <div className="bg-border/50 absolute top-1/2 right-0 left-0 h-px" />
       </div>
-      <span className="text-muted mt-3 text-xs font-medium tracking-widest uppercase sm:text-sm">
+      <span className="text-muted mt-3 text-xs font-medium tracking-wider uppercase sm:text-sm sm:tracking-widest">
         {label}
       </span>
     </div>
@@ -39,7 +39,7 @@ function TimeBlock({ value, label }: TimeUnit) {
 
 function Colon() {
   return (
-    <div className="flex h-20 flex-col items-center justify-center px-0.5 sm:h-28 sm:px-2 md:h-32">
+    <div className="flex h-20 flex-col items-center justify-center sm:h-28 sm:px-2 md:h-32">
       <div className="bg-accent/60 mb-3 h-2 w-2 rounded-full" />
       <div className="bg-accent/60 h-2 w-2 rounded-full" />
     </div>
@@ -94,13 +94,13 @@ export function Countdown() {
             Registration closes <span className="text-accent">in</span>
           </h2>
           <p className="text-muted mb-10">Jan 1, 2027</p>
-          <div className="flex items-start justify-center gap-1 sm:gap-2 md:gap-4">
-            {["Days", "Hours", "Minutes" /* "Seconds" */].map((label, i) => (
+          <div className="flex items-start justify-center gap-0.5 sm:gap-2 md:gap-4">
+            {["Days", "Hours", "Minutes", "Seconds"].map((label, i) => (
               <div key={label} className="flex items-start">
                 {i > 0 && <Colon />}
                 <div className="flex flex-col items-center">
-                  <div className="bg-surface border-border h-20 w-16 animate-pulse rounded-xl border sm:h-28 sm:w-24 md:h-32 md:w-28" />
-                  <span className="text-muted mt-3 text-xs font-medium tracking-widest uppercase sm:text-sm">
+                  <div className="bg-surface border-border h-20 w-14 animate-pulse rounded-xl border sm:h-28 sm:w-24 md:h-32 md:w-28" />
+                  <span className="text-muted mt-3 text-xs font-medium tracking-wider uppercase sm:text-sm sm:tracking-widest">
                     {label}
                   </span>
                 </div>
@@ -126,14 +126,14 @@ export function Countdown() {
         </h2>
         <p className="text-muted mb-10">Jan 1, 2027</p>
 
-        <div className="flex items-start justify-center gap-1 sm:gap-2 md:gap-4">
+        <div className="flex items-start justify-center gap-0.5 sm:gap-2 md:gap-4">
           <TimeBlock value={timeLeft.days} label="Days" />
           <Colon />
           <TimeBlock value={timeLeft.hours} label="Hours" />
           <Colon />
           <TimeBlock value={timeLeft.minutes} label="Minutes" />
-          {/* <Colon /> */}
-          {/* <TimeBlock value={timeLeft.seconds} label="Seconds" /> */}
+          <Colon />
+          <TimeBlock value={timeLeft.seconds} label="Seconds" />
         </div>
       </motion.div>
     </section>

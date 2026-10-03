@@ -126,7 +126,7 @@ export function HomeSponsors() {
   );
 
   return (
-    <section className="px-6 py-12">
+    <section id="sponsors" className="px-6 py-12">
       <div className="mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

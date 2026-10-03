@@ -148,43 +148,43 @@ export const eligibleDomains: EligibleDomain[] = [
 
 export const faqItems: FAQItem[] = [
   {
-    question: "Do I need blockchain experience to participate?",
+    question: "aliquip ex ea commodo consequat duis aute irure",
     answer:
-      "Not at all! This hackathon is beginner-friendly. We'll have workshops and mentors to help you get started. Historically, some of our best submissions come from people new to the space.",
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris.",
   },
   {
-    question: "Can I participate remotely?",
+    question: "aliqua enim ad minim veniam",
     answer:
-      "No, this is an in-person only event at MIT Campus. We believe the collaborative atmosphere, networking opportunities, and hands-on mentorship are best experienced in person.",
+      "Nisi aliquip ex ea commodo consequat duis aute irure in reprehenderit in voluptate velit esse cillum eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.",
   },
   {
-    question: "Do I need a team to participate?",
+    question: "aliqua enim ad minim veniam quis",
     answer:
-      "You can participate solo or in teams of up to 5 members. We encourage individual applications - you can find teammates through our Discord #team-search channel after being accepted.",
+      "Culpa qui officia deserunt mollit anim id est laborum sed perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.",
   },
   {
-    question: "What should I bring?",
+    question: "ad minim veniam quis",
     answer:
-      "Your laptop, charger, and enthusiasm! We'll provide food, drinks, workspace, and WiFi. Bring any hardware you might need for your project.",
+      "Dolores eos ratione sequi nesciunt neque porro lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.",
   },
   {
-    question: "How does the community prize split work?",
+    question: "aliqua enim ad minim veniam quis nostrud",
     answer:
-      "70% of the prize pool is distributed among all qualifying submissions based on ranked or tiered scoring. This means your hard work is rewarded even if you don't place in the top 3.",
+      "Et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat duis aute irure in reprehenderit in voluptate velit esse.",
   },
   {
-    question: "Can I start working on my project before the hackathon?",
+    question: "exercitation ullamco laboris nisi aliquip ex ea commodo",
     answer:
-      "You can develop concepts and ideas beforehand, but all code must be written during the hackathon period. Version control with regular commits is mandatory to verify this.",
+      "Eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum sed perspiciatis unde omnis iste natus.",
   },
   {
-    question: "What happens if I'm selected as a finalist?",
+    question: "et dolore magna aliqua enim ad minim veniam",
     answer:
-      "Finalists will be announced on Discord around 8:00 AM on Sunday. You'll pitch your project in person between 12:30 PM and 2:00 PM the same day.",
+      "Error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis quasi architecto beatae vitae.",
   },
   {
-    question: "Is there an age requirement?",
-    answer: "Yes, participants must be 18 years of age or older at the time of the event.",
+    question: "ad minim veniam quis nostrud",
+    answer: "Dicta explicabo nemo ipsam voluptas aspernatur aut odit fugit consequuntur.",
   },
 ];
 

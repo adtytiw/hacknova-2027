@@ -4,7 +4,7 @@ import { motion, type Variants } from "motion/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { UserPlus } from "lucide-react";
+import { UserPlus, Trophy, Clock, Rocket, MapPin, Users, Code } from "lucide-react";
 import { Background } from "@/components/animations/background";
 
 const containerVariants: Variants = {
@@ -17,7 +17,11 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+  },
 };
 
 const mascotVariants: Variants = {
@@ -26,6 +30,15 @@ const mascotVariants: Variants = {
     opacity: 1,
     scale: 1,
     transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
   },
 };
 
@@ -112,8 +125,8 @@ export function Hero() {
           </motion.p>
 
           <motion.p variants={itemVariants} className="text-muted mx-auto mt-6 max-w-xl lg:mx-0">
-            36 hours to learn, build, and ship the next generation of Bitcoin and blockchain
-            applications. In-person at MIT Campus.
+            36 hours to learn, build, and ship lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor
           </motion.p>
 
           <PrizeCounter />
@@ -146,7 +159,6 @@ export function Hero() {
               Sponsor Us?
             </Link>
           </motion.div>
-
         </motion.div>
 
         {/* Desktop Mascot - right side */}
@@ -184,12 +196,12 @@ export function Hero() {
 }
 
 const keyDetails = [
-  ["Prize Pool", "₹1.45 Lakhs"],
-  ["Date", "Jan 10-11, 2027"],
-  ["Duration", "36 Hours"],
-  ["Location", "BVDU Campus"],
-  ["Team Size", "4 Members"],
-  ["Format", "In-Person Only"],
+  { label: "Prize Pool", value: "₹1.45 Lakhs", icon: Trophy },
+  { label: "Date", value: "Jan 10-11, 2027", icon: Clock },
+  { label: "Duration", value: "36 Hours", icon: Rocket },
+  { label: "Location", value: "BVDU Campus", icon: MapPin },
+  { label: "Team Size", value: "4 Members", icon: Users },
+  { label: "Format", value: "In-Person Only", icon: Code },
 ];
 
 export function KeyDetailsSection() {
@@ -203,16 +215,30 @@ export function KeyDetailsSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6"
         >
-          {keyDetails.map(([label, value]) => (
-            <motion.div
-              key={label}
-              variants={itemVariants}
-              className="bg-surface border-border rounded-xl border p-4 text-center transition-colors hover:border-accent/30"
-            >
-              <p className="text-muted mb-1 text-sm">{label}</p>
-              <p className="text-foreground font-semibold">{value}</p>
-            </motion.div>
-          ))}
+          {keyDetails.map((detail) => {
+            const isPrize = detail.label === "Prize Pool";
+            return (
+              <motion.div
+                key={detail.label}
+                variants={cardVariants}
+                className={
+                  isPrize
+                    ? "bg-surface border-accent/40 rounded-xl border-2 p-4 text-center"
+                    : "bg-surface border-border hover:border-accent/30 rounded-xl border p-4 text-center transition-colors"
+                }
+              >
+                <detail.icon className="text-accent mx-auto mb-2 h-6 w-6" />
+                <p className="text-muted mb-1 text-sm">{detail.label}</p>
+                <p
+                  className={
+                    isPrize ? "text-accent font-extrabold" : "text-foreground font-semibold"
+                  }
+                >
+                  {detail.value}
+                </p>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
