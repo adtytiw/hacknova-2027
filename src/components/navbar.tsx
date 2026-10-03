@@ -338,7 +338,7 @@ export function Navbar() {
           <Link ref={logoRef} href="/" className="group flex shrink-0 items-center gap-3">
             <div className="relative h-10 w-10 overflow-hidden rounded-xl">
               <Image
-                src="/logo_2.webp"
+                src="/hacknova-logo.png"
                 alt="HackNova 2027"
                 fill
                 className="object-contain"

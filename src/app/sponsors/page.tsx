@@ -89,8 +89,8 @@ export default function SponsorsPage() {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
             <Image
-              src="/greenLogo.webp"
-              alt="Bitcoin Expo Mascot"
+              src="/new_greenLogo.png"
+              alt="HackNova Mascot"
               width={400}
               height={500}
               className="h-[50vh] max-h-[400px] w-auto object-contain opacity-20 lg:h-[55vh] lg:max-h-[500px]"

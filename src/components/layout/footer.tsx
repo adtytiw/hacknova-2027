@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "motion/react";
 import Link from "next/link";
+import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 
@@ -149,7 +150,14 @@ export function Footer() {
           className="flex flex-col items-center justify-between gap-4 sm:flex-row"
         >
           <div className="flex items-center gap-3">
-            <div className="border-border h-8 w-8 rounded-lg border" aria-label="Logo placeholder" />
+            <div className="relative h-8 w-8 overflow-hidden rounded-lg">
+              <Image
+                src="/hacknova-logo.png"
+                alt="HackNova 2027"
+                fill
+                className="object-contain"
+              />
+            </div>
             <span className="text-muted text-sm">© 2027 HackNova. All rights reserved.</span>
           </div>
 

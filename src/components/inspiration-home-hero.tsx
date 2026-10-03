@@ -30,7 +30,7 @@ export function InspirationHomeHero() {
           <div className="h-64 w-64 rounded-full blur-3xl" />
         </div>
         <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-          <Image src="/greenLogo.webp" alt="HackNova mascot" width={400} height={500} className="h-[60vh] max-h-[500px] w-auto object-contain opacity-20" priority />
+          <Image src="/new_greenLogo.png" alt="HackNova mascot" width={400} height={500} className="h-[60vh] max-h-[500px] w-auto object-contain opacity-20" priority />
         </motion.div>
       </motion.div>
 
@@ -69,7 +69,7 @@ export function InspirationHomeHero() {
         <motion.div variants={mascotVariants} initial="hidden" animate="visible" className="relative hidden flex-shrink-0 items-center justify-center lg:flex">
           <div className="bg-accent/20 absolute inset-0 scale-75 rounded-full blur-3xl" />
           <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="relative">
-            <Image src="/greenLogo.webp" alt="HackNova mascot" width={400} height={500} className="h-[400px] w-auto object-contain drop-shadow-2xl xl:h-[500px]" priority />
+            <Image src="/new_greenLogo.png" alt="HackNova mascot" width={400} height={500} className="h-[400px] w-auto object-contain drop-shadow-2xl xl:h-[500px]" priority />
           </motion.div>
         </motion.div>
       </div>

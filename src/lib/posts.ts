@@ -43,11 +43,13 @@ function parsePostFile(fileName: string): PostMeta {
 }
 
 export function getAllPosts(): PostMeta[] {
+  if (!fs.existsSync(postsDir)) return [];
   const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".md"));
   return files.map(parsePostFile).sort((a, b) => a.number - b.number);
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
+  if (!fs.existsSync(postsDir)) return null;
   const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".md"));
   const file = files.find((f) => {
     const raw = fs.readFileSync(path.join(postsDir, f), "utf8");
@@ -79,6 +81,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 }
 
 export function getAllPostSlugs(): string[] {
+  if (!fs.existsSync(postsDir)) return [];
   const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".md"));
   return files.map((f) => {
     const raw = fs.readFileSync(path.join(postsDir, f), "utf8");

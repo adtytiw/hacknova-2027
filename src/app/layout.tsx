@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     default: "HackNova 2027 | Freedom for All",
     template: "%s | HackNova 2027",
   },
+  icons: {
+    icon: [
+      { url: "/hacknova-logo.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/hacknova-logo.png",
+    apple: "/hacknova-logo.png",
+  },
   description:
     "HackNova 2027 — April 11-12 at MIT Campus, Cambridge, MA. The premier Bitcoin conference and hackathon in Boston featuring talks, workshops, and a 36-hour Bitcoin hackathon with prizes.",
   keywords: [

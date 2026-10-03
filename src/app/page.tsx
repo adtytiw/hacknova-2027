@@ -63,7 +63,7 @@ const orgJsonLd = {
   "@type": "Organization",
   name: "HackNova",
   url: "https://mitbitcoinexpo.org",
-  logo: "https://mitbitcoinexpo.org/greenLogo.webp",
+  logo: "https://mitbitcoinexpo.org/hacknova-logo.png",
   sameAs: [
     "https://x.com/MITBitcoinClub",
     "https://www.linkedin.com/company/mitbitcoinclub/",

@@ -32,7 +32,7 @@ export function Hero() {
         <div className="bg-accent/20 absolute h-64 w-64 rounded-full blur-3xl lg:h-96 lg:w-96" />
         <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
           <Image
-            src="/greenLogo.webp"
+            src="/new_greenLogo.png"
             alt="HackNova temporary event mark"
             width={400}
             height={500}
