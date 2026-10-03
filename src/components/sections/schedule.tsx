@@ -114,7 +114,7 @@ export function Schedule({ hideHeader = false }: { hideHeader?: boolean }) {
           <h2 className="text-2xl font-bold text-[#FAFAF9] sm:text-3xl">Schedule</h2>
           <div className="mt-3 h-1 w-16 rounded-full bg-[#C0FF70]" />
           <p className="mt-3 text-sm text-[#78716C]">
-            April 11–12, 2026 · MIT Campus, Cambridge MA
+            Jan 10–11, 2027 · Bharati Vidyapeeth Campus, Navi Mumbai
           </p>
           {/* Change 3: preliminary disclaimer */}
           <p className="mt-1.5 text-xs text-[#78716C]/70 italic">

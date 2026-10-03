@@ -39,12 +39,12 @@ function ScheduledView() {
         <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">Livestream</p>
         <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Stream starts soon</h2>
         <p className="mt-3 text-muted text-sm leading-relaxed">
-          Join us live on <span className="text-foreground font-medium">April 11, 2026 at 8:00 AM ET</span>
-          <br />for the HackNova 2027 — Freedom for All.
+          Join us live on <span className="text-foreground font-medium">Jan 10, 2027 at 9:00 AM IST</span>
+          <br />for HackNova 2027 — Hack the Hackers.
         </p>
       </div>
       <div className="flex flex-col items-center gap-1">
-        <p className="text-xs text-muted">Stream begins April 11, 2026 at 8:00 AM ET</p>
+        <p className="text-xs text-muted">Stream begins Jan 10, 2027 at 9:00 AM IST</p>
       </div>
     </motion.div>
   );

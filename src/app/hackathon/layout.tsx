@@ -2,29 +2,25 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Bitcoin Hackathon 2026 at MIT | 36-Hour Hackathon in Boston",
+  title: "HackNova 2027 Hackathon | 36-Hour Hackathon in Navi Mumbai",
   description:
-    "Join the HackNova 2027 Hackathon — a 36-hour Bitcoin and blockchain hackathon in Boston, April 10-12 at MIT Campus. Build innovative projects, win prizes, and connect with the Bitcoin community. Apply now.",
+    "Join the HackNova 2027 Hackathon — a 36-hour hackathon at Bharati Vidyapeeth Campus, Navi Mumbai, Jan 10-11 2027. Build innovative projects, win from a ₹1.45 Lakhs prize pool. Register now.",
   keywords: [
-    "Bitcoin hackathon",
-    "hackathon Boston",
+    "HackNova hackathon",
+    "hackathon Navi Mumbai",
     "hackathon",
-    "MIT hackathon",
-    "blockchain hackathon",
-    "crypto hackathon",
-    "Bitcoin hackathon 2026",
-    "Boston hackathon 2026",
+    "BVDU hackathon",
+    "coding hackathon India",
+    "tech hackathon 2027",
     "hackathon near me",
-    "coding hackathon Boston",
-    "cryptocurrency hackathon",
-    "Bitcoin developer event",
+    "student hackathon India",
     "36 hour hackathon",
+    "Hack the Hackers",
   ],
   openGraph: {
-    title: "Bitcoin Hackathon 2026 at MIT | 36-Hour Hackathon in Boston",
+    title: "HackNova 2027 Hackathon | 36-Hour Hackathon in Navi Mumbai",
     description:
-      "A 36-hour Bitcoin and blockchain hackathon at MIT Campus, Boston. April 10-12, 2026. Build, compete, and win prizes.",
-    url: "https://mitbitcoinexpo.org/hackathon",
+      "A 36-hour hackathon at Bharati Vidyapeeth Campus, Navi Mumbai. Jan 10-11, 2027. Build, compete, and win from a ₹1.45 Lakhs prize pool.",
     images: [
       {
         url: "/og-image.png",
@@ -36,11 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bitcoin Hackathon 2026 at MIT | Boston",
-    description: "36-hour Bitcoin hackathon at MIT. April 10-12, 2026. Apply now.",
-  },
-  alternates: {
-    canonical: "https://mitbitcoinexpo.org/hackathon",
+    title: "HackNova 2027 Hackathon | Navi Mumbai",
+    description: "36-hour hackathon at Bharati Vidyapeeth Campus. Jan 10-11, 2027. Register now.",
   },
 };
 
@@ -49,37 +42,37 @@ const hackathonJsonLd = {
   "@type": "Hackathon",
   name: "HackNova 2027 Hackathon",
   description:
-    "A 36-hour Bitcoin and blockchain hackathon at MIT Campus in Boston. Build innovative projects in Bitcoin, blockchain, and cryptocurrency. Open to developers, designers, and builders worldwide.",
-  startDate: "2026-04-10T18:00:00-04:00",
-  endDate: "2026-04-12T12:00:00-04:00",
+    "A 36-hour hackathon at Bharati Vidyapeeth Campus, Navi Mumbai. Build innovative projects, win from a ₹1.45 Lakhs prize pool. Open to developers, designers, and builders.",
+  startDate: "2027-01-10T09:00:00+05:30",
+  endDate: "2027-01-11T21:00:00+05:30",
   eventStatus: "https://schema.org/EventScheduled",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   location: {
     "@type": "Place",
-    name: "MIT Campus",
+    name: "Bharati Vidyapeeth Campus",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "77 Massachusetts Ave",
-      addressLocality: "Cambridge",
-      addressRegion: "MA",
-      postalCode: "02139",
-      addressCountry: "US",
+      streetAddress: "Sector 3, Kharghar",
+      addressLocality: "Navi Mumbai",
+      addressRegion: "Maharashtra",
+      postalCode: "410210",
+      addressCountry: "IN",
     },
   },
   organizer: {
     "@type": "Organization",
     name: "HackNova",
-    url: "https://mitbitcoinexpo.org",
+    url: "https://github.com/adtytiw",
   },
-  image: "https://mitbitcoinexpo.org/og-image.png",
-  url: "https://mitbitcoinexpo.org/hackathon",
+  image: "/og-image.png",
+  url: "/hackathon",
   isAccessibleForFree: true,
   keywords:
-    "hackathon, Bitcoin hackathon, Boston hackathon, blockchain hackathon, crypto hackathon, MIT hackathon, coding competition",
+    "hackathon, HackNova, Navi Mumbai hackathon, coding competition, student hackathon India, Hack the Hackers",
   superEvent: {
     "@type": "Event",
     name: "HackNova 2027",
-    url: "https://mitbitcoinexpo.org",
+    url: "/",
   },
 };
 

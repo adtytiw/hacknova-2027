@@ -15,9 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mitbitcoinexpo.org"),
   title: {
-    default: "HackNova 2027 | Freedom for All",
+    default: "HackNova 2027 | Hack the Hackers",
     template: "%s | HackNova 2027",
   },
   icons: {
@@ -29,31 +28,26 @@ export const metadata: Metadata = {
     apple: "/hacknova-logo.png",
   },
   description:
-    "HackNova 2027 — April 11-12 at MIT Campus, Cambridge, MA. The premier Bitcoin conference and hackathon in Boston featuring talks, workshops, and a 36-hour Bitcoin hackathon with prizes.",
+    "HackNova 2027 — Jan 10-11, 2027 at Bharati Vidyapeeth Campus, Navi Mumbai. A 36-hour hackathon bringing together passionate developers, designers, and innovators to Hack the Hackers.",
   keywords: [
     "HackNova",
-    "Bitcoin hackathon",
-    "hackathon Boston",
-    "Bitcoin conference",
-    "blockchain hackathon",
-    "crypto hackathon Boston",
-    "MIT hackathon 2026",
-    "Bitcoin event Boston",
-    "cryptocurrency conference",
-    "blockchain conference MIT",
+    "HackNova 2027",
+    "Hack the Hackers",
     "hackathon",
-    "Boston hackathon",
-    "Bitcoin",
-    "blockchain",
-    "cryptocurrency",
+    "hackathon Mumbai",
+    "hackathon Navi Mumbai",
+    "BVDU",
+    "coding hackathon",
+    "tech hackathon India",
+    "36 hour hackathon",
+    "student hackathon",
   ],
   authors: [{ name: "HackNova" }],
   creator: "HackNova",
   openGraph: {
-    title: "HackNova 2027 | Freedom for All",
+    title: "HackNova 2027 | Hack the Hackers",
     description:
-      "The premier Bitcoin conference and hackathon in Boston. April 11-12, 2026 at MIT Campus. Talks, workshops, and a 36-hour hackathon.",
-    url: "https://mitbitcoinexpo.org",
+      "HackNova 2027 — Jan 10-11, 2027 at Bharati Vidyapeeth Campus, Navi Mumbai. 36 hours of innovation, ₹1.45 Lakhs prize pool. Hack the Hackers.",
     siteName: "HackNova 2027",
     type: "website",
     locale: "en_US",
@@ -62,19 +56,16 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "HackNova 2027 — Freedom for All",
+        alt: "HackNova 2027 — Hack the Hackers",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HackNova 2027 | Freedom for All",
+    title: "HackNova 2027 | Hack the Hackers",
     description:
-      "The premier Bitcoin conference and hackathon in Boston. April 11-12, 2026 at MIT Campus.",
+      "HackNova 2027 — Jan 10-11, 2027 at Bharati Vidyapeeth Campus, Navi Mumbai. 36 hours of innovation, ₹1.45 Lakhs prize pool. Hack the Hackers.",
     images: ["/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://mitbitcoinexpo.org",
   },
   robots: {
     index: true,

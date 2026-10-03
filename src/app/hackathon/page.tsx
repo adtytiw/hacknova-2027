@@ -238,7 +238,7 @@ function HeroSection() {
           variants={itemVariants}
           className="mt-4 text-xl font-medium text-orange-400/80 md:text-2xl"
         >
-          Freedom for All
+          Hack the Hackers
         </motion.p>
 
         {/* Prize callout */}
@@ -247,8 +247,7 @@ function HeroSection() {
         </motion.div>
 
         <motion.p variants={itemVariants} className="text-muted mx-auto mt-6 max-w-xl">
-          36 hours to learn, build, and ship the next generation of Bitcoin and blockchain
-          applications. In-person at MIT Campus.
+          36 hours to learn, build, and ship innovative solutions. In-person at Bharati Vidyapeeth Campus, Navi Mumbai.
         </motion.p>
 
         <motion.div
@@ -373,7 +372,7 @@ function SponsorsSection() {
     {
       icon: Handshake,
       title: "Community Impact",
-      description: "Support the next generation of Bitcoin innovation and open-source development.",
+      description: "Support the next generation of innovation and open-source development.",
     },
     {
       icon: Sparkles,
@@ -425,7 +424,7 @@ function SponsorsSection() {
             about how you can support the hackathon.
           </p>
           <Button size="lg" className="bg-orange-500 text-white hover:bg-orange-600" asChild>
-            <a href="mailto:hackathon-mitbitcoinexpo@googlegroups.com?subject=Hackathon%20Sponsorship%20Inquiry">
+            <a href="mailto:hacknova.dms@bharatividyapeeth.edu?subject=Hackathon%20Sponsorship%20Inquiry">
               Contact Us About Sponsorship
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>
@@ -471,8 +470,8 @@ function CTASection() {
             variants={itemVariants}
             className="text-muted relative z-10 mx-auto mb-8 max-w-xl"
           >
-            Join us at MIT on April 10-12, 2026 for 36 hours of hacking, learning, and building the
-            future of Bitcoin.
+            Join us at Bharati Vidyapeeth Campus on Jan 10-11, 2027 for 36 hours of hacking, learning, and building the
+            future.
           </motion.p>
 
           <motion.div
@@ -485,25 +484,15 @@ function CTASection() {
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-orange-500/30 hover:border-orange-500 hover:bg-orange-500 hover:text-white"
-              asChild
-            >
-              <Link href="https://twitter.com/MITBitcoinClub" target="_blank">
-                Follow @MITBitcoinClub
-              </Link>
-            </Button>
           </motion.div>
 
           <motion.p variants={itemVariants} className="text-muted relative z-10 mt-6 text-sm">
             Questions? Email us at{" "}
             <a
-              href="mailto:hackathon-mitbitcoinexpo@googlegroups.com"
+              href="mailto:hacknova.dms@bharatividyapeeth.edu"
               className="text-orange-400 hover:underline"
             >
-              hackathon-mitbitcoinexpo@googlegroups.com
+              hacknova.dms@bharatividyapeeth.edu
             </a>
           </motion.p>
         </motion.div>
