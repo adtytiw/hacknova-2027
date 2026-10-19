@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Hero, KeyDetailsSection } from "@/components/sections/hero";
+import { PrizesSection } from "@/components/sections/prizes";
 import { Countdown } from "@/components/sections/countdown";
 import { AnnouncementCard } from "@/components/sections/announcement-card";
 import { EligibilitySection } from "@/components/sections/eligibility";
@@ -78,6 +79,7 @@ export default function Home() {
       <JsonLd data={orgJsonLd} />
       <Navbar />
       <Hero />
+      <PrizesSection />
       <KeyDetailsSection />
       <section className="bg-surface/50 pb-10 lg:pb-0">
         <div className="mx-auto grid max-w-6xl min-w-0 items-center gap-6 px-6 lg:grid-cols-[1.15fr_0.85fr]">
