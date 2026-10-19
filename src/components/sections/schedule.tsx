@@ -36,7 +36,7 @@ function ScheduleList({ sessions }: { sessions: Session[] }) {
       {/* Main track */}
       <div className="divide-y divide-[#292524] overflow-hidden rounded-xl border border-[#292524]">
         <div className="hidden gap-4 bg-[#1C1917]/60 px-5 py-2.5 sm:grid sm:grid-cols-[7rem_6rem_1fr]">
-          <span className="text-xs tracking-widest text-[#78716C] uppercase">Time</span>
+          <span className="text-xs tracking-widest text-[#78716C] uppercase">Date</span>
           <span className="text-xs tracking-widest text-[#78716C] uppercase">Type</span>
           <span className="text-xs tracking-widest text-[#78716C] uppercase">Session</span>
         </div>
@@ -114,7 +114,7 @@ export function Schedule({ hideHeader = false }: { hideHeader?: boolean }) {
           <h2 className="text-2xl font-bold text-[#FAFAF9] sm:text-3xl">Schedule</h2>
           <div className="mt-3 h-1 w-16 rounded-full bg-[#C0FF70]" />
           <p className="mt-3 text-sm text-[#78716C]">
-            Jan 10–11, 2027 · Bharati Vidyapeeth Campus, Navi Mumbai
+            Oct 2026 – Feb 2027 · Bharati Vidyapeeth Campus, Navi Mumbai
           </p>
           {/* Change 3: preliminary disclaimer */}
           <p className="mt-1.5 text-xs text-[#78716C]/70 italic">
@@ -124,7 +124,7 @@ export function Schedule({ hideHeader = false }: { hideHeader?: boolean }) {
         )}
 
         <div className="mx-auto max-w-4xl">
-          <Tabs defaultValue="saturday">
+          <Tabs defaultValue="registration">
             <TabsList className="mb-6 h-auto w-full rounded-lg border border-[#292524] bg-[#1C1917] p-1">
               {schedule.map((day) => (
                 <TabsTrigger
