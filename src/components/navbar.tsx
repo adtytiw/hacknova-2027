@@ -15,6 +15,7 @@ const EVENT_DETAILS = {
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/problem-statements", label: "Problem Statements" },
   { href: "/schedule", label: "Schedule" },
   { href: "/sponsors", label: "Sponsors" },
