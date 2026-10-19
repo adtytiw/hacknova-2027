@@ -7,6 +7,8 @@ import { Footer } from "@/components/layout/footer";
 import { Background } from "@/components/animations/background";
 import { Badge } from "@/components/ui/badge";
 import { objectives, whatIsHacknova, whyHacknova, type AboutItem } from "@/data/about";
+import { Patrons, SectionHeader } from "@/components/sections/patrons";
+import { HackathonLeadership } from "@/components/sections/hackathon-leadership";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -42,40 +44,6 @@ const cardVariants: Variants = {
     transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
   },
 };
-
-function SectionHeader({
-  badge,
-  title,
-  description,
-}: {
-  badge: string;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      className="mb-12 text-center"
-    >
-      <motion.div variants={itemVariants}>
-        <Badge variant="outline" className="border-accent/30 bg-accent/10 text-accent mb-4">
-          {badge}
-        </Badge>
-      </motion.div>
-      <motion.h2 variants={itemVariants} className="mb-4 text-3xl font-bold md:text-4xl">
-        {title}
-      </motion.h2>
-      {description && (
-        <motion.p variants={itemVariants} className="text-muted mx-auto max-w-2xl">
-          {description}
-        </motion.p>
-      )}
-    </motion.div>
-  );
-}
 
 function ItemGrid({ items }: { items: AboutItem[] }) {
   return (
@@ -160,7 +128,7 @@ export default function AboutPage() {
             className="text-muted mt-3 text-xl font-medium sm:text-2xl md:text-3xl"
           >
             Who We Are <span className="text-muted/40">|</span>{" "}
-            <span className="text-accent">Hack the Hackers</span>
+            <span className="text-accent">HackNova 2027</span>
           </motion.p>
         </motion.div>
 
@@ -226,6 +194,9 @@ export default function AboutPage() {
           <ItemGrid items={objectives} />
         </div>
       </section>
+
+      <Patrons />
+      <HackathonLeadership />
 
       <Footer />
     </main>
