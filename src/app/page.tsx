@@ -3,6 +3,8 @@ import { Footer } from "@/components/layout/footer";
 import { Hero, KeyDetailsSection } from "@/components/sections/hero";
 import { Countdown } from "@/components/sections/countdown";
 import { AnnouncementCard } from "@/components/sections/announcement-card";
+import { EligibilitySection } from "@/components/sections/eligibility";
+import { RulesSection } from "@/components/sections/rules";
 import { FAQSection } from "@/app/hackathon/page";
 import { JsonLd } from "@/components/seo/json-ld";
 
@@ -83,6 +85,8 @@ export default function Home() {
           <AnnouncementCard />
         </div>
       </section>
+      <EligibilitySection />
+      <RulesSection />
       <FAQSection />
       {/* Demo use case: restore the homepage livestream preview here. */}
       {/* <HomeLivestreamPreview /> */}
