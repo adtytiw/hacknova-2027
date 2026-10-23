@@ -4,7 +4,7 @@ import { motion, type Variants } from "motion/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { UserPlus, Trophy, Clock, Rocket, MapPin, Users, Code } from "lucide-react";
+import { UserPlus, Trophy, Clock, Rocket, Wallet, Users, Code } from "lucide-react";
 import { Background } from "@/components/animations/background";
 
 const containerVariants: Variants = {
@@ -124,9 +124,9 @@ export function Hero() {
             Hack the hackers
           </motion.p>
 
-          <motion.p variants={itemVariants} className="text-muted mx-auto mt-6 max-w-xl lg:mx-0">
-            36 hours to learn, build, and ship lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor
+          <motion.p variants={itemVariants} className="mx-auto mt-6 max-w-xl text-[#e7e5e4] lg:mx-0">
+            Empowering innovators to solve real-world problems through cutting-edge technology. Join
+            us for 36 hours of intensive coding, collaboration, and creativity.
           </motion.p>
 
           <PrizeCounter />
@@ -199,7 +199,7 @@ const keyDetails = [
   { label: "Prize Pool", value: "₹1.45 Lakhs", icon: Trophy },
   { label: "Date", value: "Jan 10-11, 2027", icon: Clock },
   { label: "Duration", value: "36 Hours", icon: Rocket },
-  { label: "Location", value: "BVDU Campus", icon: MapPin },
+  { label: "Entry Fee", value: "₹1,000", icon: Wallet },
   { label: "Team Size", value: "4 Members", icon: Users },
   { label: "Format", value: "In-Person Only", icon: Code },
 ];

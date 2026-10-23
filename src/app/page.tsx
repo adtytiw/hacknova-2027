@@ -79,8 +79,8 @@ export default function Home() {
       <JsonLd data={orgJsonLd} />
       <Navbar />
       <Hero />
-      <PrizesSection />
       <KeyDetailsSection />
+      <PrizesSection />
       <section className="bg-surface/50 pb-10 lg:pb-0">
         <div className="mx-auto grid max-w-6xl min-w-0 items-center gap-6 px-6 lg:grid-cols-[1.15fr_0.85fr]">
           <Countdown />
