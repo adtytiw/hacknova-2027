@@ -21,7 +21,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { keyDetails, faqItems } from "@/data/hackathon";
+import { keyDetails } from "@/data/hackathon";
+import { faqItems } from "@/data/faq_data";
 import {
   ArrowRight,
   ExternalLink,
