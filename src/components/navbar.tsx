@@ -340,11 +340,11 @@ export function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="fixed top-4 left-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2"
+        className="fixed top-5 left-1/2 z-50 w-[calc(100%-2.5rem)] max-w-5xl -translate-x-1/2 md:top-4 md:w-[calc(100%-2rem)]"
       >
         <nav
           ref={navRef}
-          className="bg-surface/60 border-border/50 flex items-center justify-between rounded-2xl border px-4 py-3 shadow-lg shadow-black/20 backdrop-blur-xl md:px-6 md:py-4"
+          className="bg-surface/60 border-border/50 flex items-center justify-between rounded-2xl border px-4 py-2 shadow-lg shadow-black/20 backdrop-blur-xl md:px-6 md:py-4"
         >
           {/* Logo */}
           <Link ref={logoRef} href="/" className="group flex shrink-0 items-center gap-3">
@@ -357,7 +357,7 @@ export function Navbar() {
                 priority
               />
             </div>
-            <div className="hidden sm:block">
+            <div>
               <p className="text-foreground text-sm leading-tight font-semibold">HackNova</p>
               <p className="text-muted text-xs">2027</p>
             </div>

@@ -33,6 +33,8 @@ const mascotVariants: Variants = {
   },
 };
 
+const EVENT_DATE = "Jan 10-11, 2027";
+
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -62,7 +64,7 @@ function PrizeCounter() {
 
   return (
     <motion.div variants={itemVariants} className="mt-7">
-      <p className="text-muted text-sm font-semibold tracking-widest uppercase">Prize Pool</p>
+      <p className="text-[#a3a3a3] text-sm font-semibold tracking-[0.25em] uppercase">Prize Pool</p>
       <p className="text-accent mt-1 text-4xl font-black tabular-nums sm:text-5xl">
         ₹{value.toLocaleString("en-IN")}
       </p>
@@ -72,47 +74,161 @@ function PrizeCounter() {
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-24 pb-16">
+    <section className="relative flex min-h-svh flex-col items-stretch justify-start overflow-hidden px-5 pt-[108px] pb-[max(2.75rem,env(safe-area-inset-bottom))] lg:min-h-screen lg:items-center lg:justify-center lg:px-6 lg:pt-24 lg:pb-16">
       <Background />
 
-      {/* Mobile Mascot - behind text, transparent */}
-      <motion.div
-        variants={mascotVariants}
-        initial="hidden"
-        animate="visible"
-        className="absolute inset-0 z-[1] flex -translate-y-12 items-center justify-center lg:hidden"
-      >
-        {/* Glow effect behind mascot */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="bg-accent/30 h-64 w-64 rounded-full blur-3xl" />
-        </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 lg:hidden"
+        style={{
+          backgroundImage:
+            "radial-gradient(120% 60% at 85% 24%, rgba(192,255,112,0.20), rgba(192,255,112,0) 60%)",
+        }}
+      />
 
+      <div className="pointer-events-none absolute top-[42%] right-[-36px] z-[1] flex h-[clamp(10rem,51vw,13.75rem)] w-[clamp(10rem,51vw,13.75rem)] items-center justify-center min-[480px]:right-[calc((100vw_-_430px)/2_-_36px)] lg:hidden">
+        <div className="bg-accent/20 absolute inset-0 scale-75 rounded-full blur-3xl" />
         <motion.div
-          animate={{ y: [0, -12, 0] }}
+          animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="relative h-full w-full"
         >
           <Image
             src="/new_greenLogo.png"
             alt="HackNova Mascot"
             width={400}
-            height={500}
-            className="h-[60vh] max-h-[500px] w-auto object-contain opacity-20"
+            height={400}
+            className="h-full w-full object-contain drop-shadow-[0_0_24px_rgba(192,255,112,0.25)]"
             priority
           />
         </motion.div>
-      </motion.div>
+      </div>
 
-      <div className="relative z-10 mr-auto ml-auto flex w-full max-w-6xl items-center justify-center gap-4 lg:mr-8 lg:ml-32 lg:gap-12 xl:ml-48">
-        {/* Text Content */}
+      <div className="relative z-10 mr-auto ml-auto flex w-full max-w-6xl flex-1 flex-col items-stretch justify-start gap-0 lg:mr-8 lg:ml-32 lg:flex-none lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:ml-48">
+        <div className="mx-auto flex w-full max-w-[430px] flex-1 flex-col lg:hidden">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/bvdu-logo.png"
+              alt="Bharati Vidyapeeth (Deemed to be University) logo"
+              width={52}
+              height={52}
+              className="h-[clamp(44px,10vw,52px)] w-[clamp(44px,10vw,52px)] shrink-0 object-contain"
+              priority
+            />
+            <div className="flex min-w-0 flex-col gap-0.5">
+              <p className="text-[clamp(13px,2.93vw,15px)] leading-[1.35] font-medium text-[#e6e9e4]">
+                Bharati Vidyapeeth (Deemed to be University)
+              </p>
+              <p className="text-[clamp(13px,2.93vw,15px)] leading-[1.35] text-[#9ba19d]">
+                Dept. of Management Studies (Off Campus)
+              </p>
+            </div>
+          </div>
+
+          <h1 className="mt-10 text-[clamp(4.5rem,24.6vw,7rem)] leading-[0.88] font-extrabold tracking-[-0.045em] text-[#f4f6f2]">
+            <span className="block">HACK</span>
+            <span className="block">NOVA</span>
+            <span className="text-accent block">2027</span>
+          </h1>
+
+          <p className="text-accent mt-[22px] text-[22px] leading-tight font-medium">
+            Hack the hackers.
+          </p>
+          <p className="mt-2 max-w-[210px] text-[16px] leading-[1.45] text-[#a3a9a4]">
+            36 hours of coding, collaboration, and creativity.
+          </p>
+
+          <div
+            className="mt-7 grid grid-cols-[1fr_0.8fr_1fr] border-y border-[#1e2220]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+              backgroundSize: "28px 28px",
+            }}
+          >
+            <div className="flex min-w-0 flex-col gap-0.5 py-3.5">
+              <span className="text-[clamp(1.125rem,5.64vw,1.375rem)] leading-none font-bold tracking-[-0.02em]">
+                Jan 10–11
+              </span>
+              <span className="text-[clamp(11px,3.33vw,13px)] text-[#9ba19d]">Navi Mumbai</span>
+            </div>
+            <div className="flex min-w-0 flex-col gap-0.5 border-l border-[#1e2220] py-3.5 pl-3.5">
+              <span className="text-[clamp(1.125rem,5.64vw,1.375rem)] leading-none font-bold tracking-[-0.02em]">
+                36 hrs
+              </span>
+              <span className="text-[clamp(11px,3.33vw,13px)] text-[#9ba19d]">Non-stop</span>
+            </div>
+            <div className="flex min-w-0 flex-col gap-0.5 border-l border-[#1e2220] py-3.5 pl-3.5">
+              <span className="text-accent text-[clamp(1.125rem,5.64vw,1.375rem)] leading-none font-bold tracking-[-0.02em]">
+                ₹1.45L
+              </span>
+              <span className="text-[clamp(11px,3.33vw,13px)] text-[#9ba19d]">Prize pool</span>
+            </div>
+          </div>
+
+          <div className="mt-auto flex w-full max-w-[350px] gap-2.5 pt-10 min-[480px]:mx-auto">
+            <Link
+              href="https://unstop.com/o/DvVI6SX?lb=oOvtANg1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 flex h-[52px] flex-[1.3] items-center justify-center gap-2 rounded-[14px] text-[16px] font-semibold whitespace-nowrap transition-colors"
+            >
+              <UserPlus className="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
+              Register now
+            </Link>
+            <Link
+              href="/sponsors"
+              className="text-foreground flex h-[52px] flex-1 items-center justify-center gap-2 rounded-[14px] border border-[#2b312d] bg-transparent text-[16px] font-semibold whitespace-nowrap transition-colors hover:bg-white/[0.03]"
+            >
+              Sponsor us
+              <svg
+                className="h-4 w-4 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 12h14M13 6l6 6-6 6"
+                />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex-1 text-center lg:max-w-2xl lg:text-left"
+          className="hidden flex-1 flex-col text-left lg:block lg:max-w-2xl"
         >
+          <motion.div
+            variants={itemVariants}
+            className="mb-6 flex flex-row items-center justify-start gap-4 text-left"
+          >
+            <Image
+              src="/bvdu-logo.png"
+              alt="Bharati Vidyapeeth (Deemed to be University) logo"
+              width={64}
+              height={64}
+              className="h-16 w-16 object-contain"
+              priority
+            />
+            <div className="flex flex-col gap-1">
+              <p className="text-foreground/90 text-base whitespace-nowrap">
+                Bharati Vidyapeeth (Deemed to be University)
+              </p>
+              <p className="text-[13px] text-gray-400">
+                Department of Management Studies (Off Campus)
+              </p>
+            </div>
+          </motion.div>
+
           <motion.h1
             variants={itemVariants}
-            className="text-foreground text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
+            className="text-foreground text-8xl font-bold tracking-tight"
           >
             HACKNOVA <span className="text-accent">2027</span>
           </motion.h1>
@@ -124,17 +240,17 @@ export function Hero() {
             Hack the hackers
           </motion.p>
 
-          <motion.p variants={itemVariants} className="mx-auto mt-6 max-w-xl text-[#e7e5e4] lg:mx-0">
+          <motion.p
+            variants={itemVariants}
+            className="mx-auto mt-6 max-w-xl text-[#e7e5e4] lg:mx-0"
+          >
             Empowering innovators to solve real-world problems through cutting-edge technology. Join
             us for 36 hours of intensive coding, collaboration, and creativity.
           </motion.p>
 
           <PrizeCounter />
 
-          <motion.div
-            variants={itemVariants}
-            className="mt-6 flex flex-row justify-center gap-3 lg:justify-start"
-          >
+          <motion.div variants={itemVariants} className="mt-6 flex flex-row justify-start gap-3">
             <Link
               href="https://unstop.com/o/DvVI6SX?lb=oOvtANg1"
               target="_blank"
@@ -161,17 +277,14 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Desktop Mascot - right side */}
         <motion.div
           variants={mascotVariants}
           initial="hidden"
           animate="visible"
           className="relative hidden flex-shrink-0 items-center justify-center lg:flex"
         >
-          {/* Glow effect behind mascot */}
           <div className="bg-accent/20 absolute inset-0 scale-75 rounded-full blur-3xl" />
 
-          {/* Floating animation wrapper */}
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -189,15 +302,14 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="from-background pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-40 bg-gradient-to-t to-transparent" />
+      <div className="from-background pointer-events-none absolute right-0 bottom-0 left-0 z-10 hidden h-40 bg-gradient-to-t to-transparent lg:block" />
     </section>
   );
 }
 
 const keyDetails = [
   { label: "Prize Pool", value: "₹1.45 Lakhs", icon: Trophy },
-  { label: "Date", value: "Jan 10-11, 2027", icon: Clock },
+  { label: "Date", value: EVENT_DATE, icon: Clock },
   { label: "Duration", value: "36 Hours", icon: Rocket },
   { label: "Entry Fee", value: "₹1,000", icon: Wallet },
   { label: "Team Size", value: "4 Members", icon: Users },
