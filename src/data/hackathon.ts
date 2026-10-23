@@ -42,11 +42,6 @@ export interface JudgingCriterion {
   icon: LucideIcon;
 }
 
-export interface FAQItem {
-  question: string;
-  answer: string;
-}
-
 export interface EligibleDomain {
   name: string;
   description: string;
@@ -144,48 +139,6 @@ export const eligibleDomains: EligibleDomain[] = [
   { name: "Privacy Tech", description: "Privacy-preserving technologies" },
   { name: "Smart Contracts", description: "On-chain programmable logic" },
   { name: "Dev Tools", description: "Developer tools and infrastructure" },
-];
-
-export const faqItems: FAQItem[] = [
-  {
-    question: "aliquip ex ea commodo consequat duis aute irure",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris.",
-  },
-  {
-    question: "aliqua enim ad minim veniam",
-    answer:
-      "Nisi aliquip ex ea commodo consequat duis aute irure in reprehenderit in voluptate velit esse cillum eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.",
-  },
-  {
-    question: "aliqua enim ad minim veniam quis",
-    answer:
-      "Culpa qui officia deserunt mollit anim id est laborum sed perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.",
-  },
-  {
-    question: "ad minim veniam quis",
-    answer:
-      "Dolores eos ratione sequi nesciunt neque porro lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.",
-  },
-  {
-    question: "aliqua enim ad minim veniam quis nostrud",
-    answer:
-      "Et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat duis aute irure in reprehenderit in voluptate velit esse.",
-  },
-  {
-    question: "exercitation ullamco laboris nisi aliquip ex ea commodo",
-    answer:
-      "Eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum sed perspiciatis unde omnis iste natus.",
-  },
-  {
-    question: "et dolore magna aliqua enim ad minim veniam",
-    answer:
-      "Error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis quasi architecto beatae vitae.",
-  },
-  {
-    question: "ad minim veniam quis nostrud",
-    answer: "Dicta explicabo nemo ipsam voluptas aspernatur aut odit fugit consequuntur.",
-  },
 ];
 
 export const submissionRequirements = [
