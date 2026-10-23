@@ -345,7 +345,22 @@ export function FAQSection() {
                   <AccordionTrigger className="text-left hover:no-underline">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted">{item.answer}</AccordionContent>
+                  <AccordionContent className="text-muted">
+                    {item.answer}
+                    {item.link && (
+                      <>
+                        {" "}
+                        <a
+                          href={item.link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-orange-400 hover:underline"
+                        >
+                          {item.link.label}
+                        </a>
+                      </>
+                    )}
+                  </AccordionContent>
                 </AccordionItem>
               </motion.div>
             ))}

@@ -1,6 +1,10 @@
 export interface FAQItem {
   question: string;
   answer: string;
+  link?: {
+    label: string;
+    href: string;
+  };
 }
 
 export const faqItems: FAQItem[] = [
@@ -23,6 +27,10 @@ export const faqItems: FAQItem[] = [
     question: "Who won HackNova last year?",
     answer:
       "The winning teams and their projects from previous editions are showcased in the Past Winners section of the website.",
+    link: {
+      label: "View the 2026 winners",
+      href: "https://2026.bvduhacknova.in/",
+    },
   },
   {
     question: "Can I see projects from previous HackNova events?",
