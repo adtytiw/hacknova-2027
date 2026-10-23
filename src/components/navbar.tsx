@@ -11,7 +11,19 @@ const EVENT_DETAILS = {
   title: "HackNova 2027",
   description: "HackNova 2027 event details will be announced soon.",
   location: "Bharati Vidyapeeth Deemed University",
+  start: "20270110T090000",
+  end: "20270111T180000",
 };
+
+function eventParams() {
+  return {
+    action: "TEMPLATE",
+    text: EVENT_DETAILS.title,
+    dates: `${EVENT_DETAILS.start}/${EVENT_DETAILS.end}`,
+    details: EVENT_DETAILS.description,
+    location: EVENT_DETAILS.location,
+  };
+}
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -43,31 +55,29 @@ const REGISTER_ITEM =
 const GROUP_GAP = 16;
 
 function generateICS(): string {
-  const start = "20270110T090000";
-  const end = "20270111T180000";
+  const params = eventParams();
+  const dtstamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
   return [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
     "PRODID:-//HackNova 2027//EN",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
     "BEGIN:VEVENT",
-    `DTSTART:${start}`,
-    `DTEND:${end}`,
-    `SUMMARY:${EVENT_DETAILS.title}`,
-    `DESCRIPTION:${EVENT_DETAILS.description}`,
-    `LOCATION:${EVENT_DETAILS.location}`,
+    "UID:hacknova-2027@hacknova",
+    `DTSTAMP:${dtstamp}`,
+    `DTSTART:${EVENT_DETAILS.start}`,
+    `DTEND:${EVENT_DETAILS.end}`,
+    `SUMMARY:${params.text}`,
+    `DESCRIPTION:${params.details}`,
+    `LOCATION:${params.location}`,
     "END:VEVENT",
     "END:VCALENDAR",
   ].join("\r\n");
 }
 
 function generateGoogleCalendarUrl(): string {
-  const params = new URLSearchParams({
-    action: "TEMPLATE",
-    text: EVENT_DETAILS.title,
-    dates: "20270110T090000/20270111T180000",
-    details: EVENT_DETAILS.description,
-    location: EVENT_DETAILS.location,
-  });
+  const params = new URLSearchParams(eventParams());
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
 
@@ -223,7 +233,7 @@ function MobileMenu({
               })}
               <div className="border-border/30 mt-2 border-t pt-2">
                 <Link
-                  href="https://github.com/adtytiw"
+                  href="https://unstop.com/o/DvVI6SX?lb=oOvtANg1"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={onClose}
@@ -399,7 +409,7 @@ export function Navbar() {
               <AddToCalendarDropdown />
             </span>
             <Link
-              href="https://github.com/adtytiw"
+              href="https://unstop.com/o/DvVI6SX?lb=oOvtANg1"
               target="_blank"
               rel="noopener noreferrer"
               className={`${REGISTER_ITEM} ${isCollapsed ? "hidden" : "flex"} ${visibility}`}

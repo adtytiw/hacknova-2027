@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 const STORAGE_KEY = "hacknova-ticket-notice-dismissed";
-const REGISTER_URL = "https://github.com/adtytiw";
+const REGISTER_URL = "https://unstop.com/o/DvVI6SX?lb=oOvtANg1";
 
 export function TicketNotice() {
   const [visible, setVisible] = useState(true);

@@ -136,7 +136,7 @@ export function Hero() {
             className="mt-6 flex flex-row justify-center gap-3 lg:justify-start"
           >
             <Link
-              href="https://forms.gle/aXty5Gdxr5BCRaxKA"
+              href="https://unstop.com/o/DvVI6SX?lb=oOvtANg1"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-accent text-accent-foreground hover:bg-accent/90 flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-medium transition-colors"
@@ -145,7 +145,7 @@ export function Hero() {
               Register Now
             </Link>
             <Link
-              href="#sponsors"
+              href="/sponsors"
               className="bg-surface/80 border-border text-foreground hover:bg-surface flex items-center justify-center gap-2 rounded-xl border px-6 py-3 font-medium transition-colors"
             >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
