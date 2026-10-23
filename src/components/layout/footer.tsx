@@ -1,8 +1,11 @@
 "use client";
 
-import { motion, type Variants } from "motion/react";
+import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { AnimatePresence, motion, type Variants } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowUpRight, Github, Instagram, Users, X } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 
@@ -19,7 +22,126 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
+const SOCIAL_LINK_CLASS =
+  "border-border text-muted hover:border-accent/50 hover:bg-accent/10 hover:text-accent flex h-9 w-9 items-center justify-center rounded-full border transition-colors";
+
+const DEVELOPERS = [
+  {
+    name: "Aditya",
+    handle: "@adtytiw",
+    avatar: "/developers/adtytiw.jpg",
+    href: "https://github.com/adtytiw",
+  },
+  {
+    name: "Siddhesh Mhatre",
+    handle: "@glitchySid",
+    avatar: "/developers/glitchySid.jpg",
+    href: "https://github.com/glitchySid",
+  },
+];
+
+function DeveloperModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open, onClose]);
+
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 z-[80] flex items-center justify-center p-4"
+        >
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={onClose}
+            aria-hidden="true"
+          />
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="developer-profiles-title"
+            initial={{ opacity: 0, y: 16, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 16, scale: 0.96 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="border-border/50 bg-surface/95 relative w-full max-w-md overflow-hidden rounded-2xl border p-6 shadow-2xl shadow-black/50 backdrop-blur-xl"
+          >
+            <button
+              type="button"
+              onClick={onClose}
+              autoFocus
+              aria-label="Close developer profiles"
+              className="text-muted hover:bg-white/5 hover:text-foreground absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full transition-colors"
+            >
+              <X className="h-4 w-4" aria-hidden="true" />
+            </button>
+
+            <p className="text-accent text-xs font-medium tracking-[0.2em] uppercase">HackNova</p>
+            <h2
+              id="developer-profiles-title"
+              className="text-foreground mt-2 text-2xl font-semibold tracking-tight"
+            >
+              Developer profiles
+            </h2>
+            <p className="text-muted mt-1 text-sm">The people behind the HackNova site.</p>
+
+            <div className="mt-6 space-y-3">
+              {DEVELOPERS.map((developer) => (
+                <a
+                  key={developer.handle}
+                  href={developer.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-border/60 bg-background/40 hover:border-accent/40 hover:bg-accent/5 group flex items-center gap-3 rounded-xl border p-3 transition-colors"
+                >
+                  <div className="border-border relative h-12 w-12 shrink-0 overflow-hidden rounded-full border">
+                    <Image
+                      src={developer.avatar}
+                      alt={`${developer.name} GitHub avatar`}
+                      fill
+                      sizes="48px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-foreground truncate text-sm font-semibold">{developer.name}</p>
+                    <p className="text-muted truncate text-xs">{developer.handle}</p>
+                  </div>
+                  <ArrowUpRight
+                    className="text-muted group-hover:text-accent h-4 w-4 shrink-0 transition-colors"
+                    aria-hidden="true"
+                  />
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>,
+    document.body,
+  );
+}
+
 export function Footer() {
+  const [isDevelopersOpen, setIsDevelopersOpen] = useState(false);
+  const closeDevelopers = useCallback(() => setIsDevelopersOpen(false), []);
+
   return (
     <motion.footer
       initial="hidden"
@@ -161,7 +283,7 @@ export function Footer() {
             <span className="text-muted text-sm">© 2027 HackNova. All rights reserved.</span>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <a
               href="https://2026.bvduhacknova.in/"
               target="_blank"
@@ -178,14 +300,42 @@ export function Footer() {
                 />
               </svg>
             </a>
-            <div className="flex items-center gap-4" aria-label="Social logo placeholders">
-              <div className="border-border h-8 w-8 rounded-full border" />
-              <div className="border-border h-8 w-8 rounded-full border" />
-              <div className="border-border h-8 w-8 rounded-full border" />
+            <div className="flex items-center gap-2.5" aria-label="Social links">
+              <a
+                href="https://www.instagram.com/bvdudms/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram — @bvdudms"
+                title="@bvdudms on Instagram"
+                className={SOCIAL_LINK_CLASS}
+              >
+                <Instagram className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href="https://github.com/adtytiw/hacknova-2027"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View HackNova source code on GitHub"
+                title="Source code on GitHub"
+                className={SOCIAL_LINK_CLASS}
+              >
+                <Github className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <button
+                type="button"
+                onClick={() => setIsDevelopersOpen(true)}
+                aria-label="View developer profiles"
+                title="Developer profiles"
+                className={SOCIAL_LINK_CLASS}
+              >
+                <Users className="h-4 w-4" aria-hidden="true" />
+              </button>
             </div>
           </div>
         </motion.div>
       </div>
+
+      <DeveloperModal open={isDevelopersOpen} onClose={closeDevelopers} />
     </motion.footer>
   );
 }
