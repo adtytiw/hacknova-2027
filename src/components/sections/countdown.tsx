@@ -46,7 +46,8 @@ function Colon() {
   );
 }
 
-const TARGET_DATE = new Date("2027-01-01T00:00:00").getTime();
+const TARGET_DATE = new Date("2026-11-20T23:59:59+05:30").getTime();
+const TARGET_DATE_LABEL = "Nov 20, 2026";
 
 function calculateTimeLeft() {
   const now = new Date().getTime();
@@ -93,9 +94,9 @@ export function Countdown() {
           <h2 className="text-foreground mb-2 text-2xl font-semibold sm:text-3xl">
             Registration closes <span className="text-accent">in</span>
           </h2>
-          <p className="text-muted mb-10">Jan 1, 2027</p>
+          <p className="text-muted mb-10">{TARGET_DATE_LABEL}</p>
           <div className="flex items-start justify-center gap-1 sm:gap-2 md:gap-4">
-            {["Days", "Hours", "Minutes", "Seconds"].map((label, i) => (
+            {["Days", "Hours", "Minutes"].map((label, i) => (
               <div key={label} className="flex items-start gap-1 sm:gap-2 md:gap-4">
                 {i > 0 && <Colon />}
                 <div className="flex flex-col items-center">
@@ -124,7 +125,7 @@ export function Countdown() {
         <h2 className="text-foreground mb-2 text-2xl font-semibold sm:text-3xl">
           Registration closes <span className="text-accent">in</span>
         </h2>
-        <p className="text-muted mb-10">Jan 1, 2027</p>
+        <p className="text-muted mb-10">{TARGET_DATE_LABEL}</p>
 
         <div className="flex items-start justify-center gap-1 sm:gap-2 md:gap-4">
           <TimeBlock value={timeLeft.days} label="Days" />
@@ -132,8 +133,6 @@ export function Countdown() {
           <TimeBlock value={timeLeft.hours} label="Hours" />
           <Colon />
           <TimeBlock value={timeLeft.minutes} label="Minutes" />
-          <Colon />
-          <TimeBlock value={timeLeft.seconds} label="Seconds" />
         </div>
       </motion.div>
     </section>
