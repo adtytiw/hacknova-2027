@@ -74,7 +74,7 @@ function PrizeCounter() {
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-svh flex-col items-stretch justify-start overflow-hidden px-5 pt-[108px] pb-[max(2.75rem,env(safe-area-inset-bottom))] lg:min-h-screen lg:items-center lg:justify-center lg:px-6 lg:pt-24 lg:pb-16">
+    <section className="relative flex min-h-svh flex-col items-stretch justify-start overflow-hidden px-5 pt-[108px] pb-[max(2.75rem,env(safe-area-inset-bottom))] lg:min-h-screen lg:items-center lg:justify-center lg:px-8 lg:pt-24 lg:pb-16">
       <Background />
 
       <div
@@ -86,7 +86,7 @@ export function Hero() {
         }}
       />
 
-      <div className="pointer-events-none absolute top-[42%] right-[-36px] z-[1] flex h-[clamp(10rem,51vw,13.75rem)] w-[clamp(10rem,51vw,13.75rem)] items-center justify-center min-[480px]:right-[calc((100vw_-_430px)/2_-_36px)] lg:hidden">
+      <div className="pointer-events-none absolute top-[42%] right-[-36px] z-[1] flex h-[clamp(10rem,51vw,13.75rem)] w-[clamp(10rem,51vw,13.75rem)] items-center justify-center min-[480px]:right-[calc((100vw_-_430px)/2_-_36px)] sm:right-[calc((100vw_-_560px)/2_-_36px)] md:right-[calc((100vw_-_720px)/2_-_36px)] lg:hidden">
         <div className="bg-accent/20 absolute inset-0 scale-75 rounded-full blur-3xl" />
         <motion.div
           animate={{ y: [0, -10, 0] }}
@@ -104,8 +104,8 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 mr-auto ml-auto flex w-full max-w-6xl flex-1 flex-col items-stretch justify-start gap-0 lg:mr-8 lg:ml-32 lg:flex-none lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:ml-48">
-        <div className="mx-auto flex w-full max-w-[430px] flex-1 flex-col lg:hidden">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col items-stretch justify-start gap-0 lg:flex-none lg:flex-row lg:items-center lg:justify-center lg:gap-14 xl:gap-20">
+        <div className="mx-auto flex w-full max-w-[430px] flex-1 flex-col sm:max-w-[560px] md:max-w-[720px] lg:hidden">
           <div className="flex items-center gap-3">
             <Image
               src="/bvdu-logo.png"
@@ -134,7 +134,7 @@ export function Hero() {
           <p className="text-accent mt-[22px] text-[22px] leading-tight font-medium">
             Hack the hackers.
           </p>
-          <p className="mt-2 max-w-[210px] text-[16px] leading-[1.45] text-[#a3a9a4]">
+          <p className="mt-2 max-w-[210px] text-[16px] leading-[1.45] text-[#a3a9a4] sm:max-w-[300px] md:max-w-[360px]">
             36 hours of coding, collaboration, and creativity.
           </p>
 
@@ -202,7 +202,7 @@ export function Hero() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="hidden flex-1 flex-col text-left lg:block lg:max-w-2xl"
+          className="hidden min-w-0 flex-1 flex-col text-left lg:block lg:max-w-3xl"
         >
           <motion.div
             variants={itemVariants}
