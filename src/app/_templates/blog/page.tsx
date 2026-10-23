@@ -1,3 +1,4 @@
+// TEMPLATE ONLY — not routed. Kept as a reference for future editorial pages.
 import Image from "next/image";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -8,8 +9,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog | HackNova 2027",
-  description:
-    "Ideas, analysis, and perspectives from the HackNova 2027 team on hot-button Bitcoin topics.",
+  description: "Ideas, analysis, and perspectives from the HackNova 2027 team.",
 };
 
 export default function BlogPage() {

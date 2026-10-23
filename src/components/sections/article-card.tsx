@@ -1,4 +1,5 @@
 "use client";
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 
 import { motion } from "motion/react";
 import Link from "next/link";

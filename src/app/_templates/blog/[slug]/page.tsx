@@ -1,3 +1,4 @@
+// TEMPLATE ONLY — not routed. Kept as a reference for future post detail pages.
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";

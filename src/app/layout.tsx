@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.bvduhacknova.in"),
   title: {
     default: "HackNova 2027 | Hack the Hackers",
     template: "%s | HackNova 2027",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     apple: "/hacknova-logo.png",
   },
   description:
-    "HackNova 2027 — Jan 10-11, 2027 at Bharati Vidyapeeth Campus, Navi Mumbai. A 36-hour hackathon bringing together passionate developers, designers, and innovators to Hack the Hackers.",
+    "HackNova 2027 — Feb 6-7, 2027 at BVDU Department of Management Studies, Kharghar, Navi Mumbai. A 36-hour hackathon bringing together passionate developers, designers, and innovators to Hack the Hackers.",
   keywords: [
     "HackNova",
     "HackNova 2027",
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "HackNova 2027 | Hack the Hackers",
     description:
-      "HackNova 2027 — Jan 10-11, 2027 at Bharati Vidyapeeth Campus, Navi Mumbai. 36 hours of innovation, ₹1.45 Lakhs prize pool. Hack the Hackers.",
+      "HackNova 2027 — Feb 6-7, 2027 at BVDU Department of Management Studies, Kharghar, Navi Mumbai. 36 hours of innovation, ₹1.45 Lakhs prize pool. Hack the Hackers.",
     siteName: "HackNova 2027",
     type: "website",
     locale: "en_US",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HackNova 2027 | Hack the Hackers",
     description:
-      "HackNova 2027 — Jan 10-11, 2027 at Bharati Vidyapeeth Campus, Navi Mumbai. 36 hours of innovation, ₹1.45 Lakhs prize pool. Hack the Hackers.",
+      "HackNova 2027 — Feb 6-7, 2027 at BVDU Department of Management Studies, Kharghar, Navi Mumbai. 36 hours of innovation, ₹1.45 Lakhs prize pool. Hack the Hackers.",
     images: ["/og-image.png"],
   },
   robots: {

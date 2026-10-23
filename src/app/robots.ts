@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://mitbitcoinexpo.org/sitemap.xml",
+    sitemap: "https://www.bvduhacknova.in/sitemap.xml",
   };
 }

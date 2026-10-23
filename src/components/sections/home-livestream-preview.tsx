@@ -1,11 +1,12 @@
 "use client";
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const LIVE_START = new Date("2026-04-11T08:00:00-04:00");
+const LIVE_START = new Date("2027-02-06T08:00:00+05:30");
 
 export function HomeLivestreamPreview() {
   const [isLive] = useState(true);
@@ -73,7 +74,7 @@ export function HomeLivestreamPreview() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-foreground">Stream starts April 11 at 8:00 AM ET</p>
+                    <p className="text-sm font-semibold text-foreground">Stream starts February 6 at 8:00 AM IST</p>
                     <p className="mt-1 text-xs text-muted">Watch all talks and panels live — no registration required.</p>
                   </div>
                   <div className="flex items-center gap-1.5 rounded-full border border-accent/30 px-4 py-1.5 text-xs font-medium text-accent transition-colors group-hover:bg-accent group-hover:text-black">

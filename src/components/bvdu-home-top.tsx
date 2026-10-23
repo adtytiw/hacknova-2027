@@ -1,3 +1,4 @@
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 import Image from "next/image";
 
 export function BvduHomeTop() {
@@ -21,7 +22,7 @@ export function BvduHomeTop() {
               Empowering innovators to solve real-world problems through cutting-edge technology. Join us for 36 hours of intensive coding, collaboration, and creativity.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm">
-              <span className="text-foreground"><strong className="text-accent">January 2026</strong></span>
+              <span className="text-foreground"><strong className="text-accent">February 2027</strong></span>
               <span className="text-foreground"><strong className="text-accent">₹1.45L</strong> Prize Pool</span>
               <span className="text-foreground"><strong className="text-accent">1000/-</strong> Per Team</span>
             </div>

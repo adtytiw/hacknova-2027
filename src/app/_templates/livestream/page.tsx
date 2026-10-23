@@ -1,3 +1,4 @@
+// TEMPLATE ONLY — not routed. Kept as a reference for future livestream pages.
 import { type Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -5,12 +6,11 @@ import { LivestreamPlayer } from "@/components/sections/livestream-player";
 
 export const metadata: Metadata = {
   title: "Livestream | HackNova 2027",
-  description:
-    "Watch the HackNova 2027 live. Freedom for All — April 11–12, 2026, Cambridge MA.",
+  description: "Watch HackNova 2027 live from BVDU Department of Management Studies, Navi Mumbai.",
   openGraph: {
     title: "Livestream | HackNova 2027",
-    description: "Watch the HackNova 2027 live. April 11–12, 2026.",
-    url: "https://mitbitcoinexpo.org/livestream",
+    description: "Watch HackNova 2027 live on February 6-7, 2027.",
+    url: "https://www.bvduhacknova.in/livestream",
   },
 };
 
@@ -27,8 +27,8 @@ export default function LivestreamPage() {
           <h1 className="text-3xl font-bold text-foreground sm:text-4xl">Livestream</h1>
           <div className="mt-3 h-1 w-16 rounded-full bg-accent" />
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
-            Watch all talks and panels live. The stream opens on April 11 at 8:00 AM ET
-            and runs through April 12. No registration required.
+            Watch all talks and panels live. The stream opens on February 6 at 8:00 AM IST
+            and runs through February 7. No registration required.
           </p>
         </div>
 

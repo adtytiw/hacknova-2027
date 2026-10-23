@@ -1,3 +1,4 @@
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";

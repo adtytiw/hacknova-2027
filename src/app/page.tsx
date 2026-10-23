@@ -6,7 +6,7 @@ import { Countdown } from "@/components/sections/countdown";
 import { AnnouncementCard } from "@/components/sections/announcement-card";
 import { EligibilitySection } from "@/components/sections/eligibility";
 import { RulesSection } from "@/components/sections/rules";
-import { FAQSection } from "@/app/hackathon/page";
+import { FAQSection } from "@/components/sections/faq";
 import { JsonLd } from "@/components/seo/json-ld";
 
 const eventJsonLd = {
@@ -14,17 +14,17 @@ const eventJsonLd = {
   "@type": "Event",
   name: "HackNova 2027",
   description:
-    "A 36-hour national-level hackathon at Bharati Vidyapeeth Campus, Navi Mumbai. Theme: Hack the Hackers.",
-  startDate: "2027-01-10T09:00:00+05:30",
-  endDate: "2027-01-11T21:00:00+05:30",
+    "A 36-hour national-level hackathon hosted by Bharati Vidyapeeth (Deemed to be University), Department of Management Studies, Navi Mumbai. Theme: Hack the Hackers.",
+  startDate: "2027-02-06T08:00:00+05:30",
+  endDate: "2027-02-07T18:00:00+05:30",
   eventStatus: "https://schema.org/EventScheduled",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   location: {
     "@type": "Place",
-    name: "Bharati Vidyapeeth Campus",
+    name: "Bharati Vidyapeeth (Deemed to be University), Department of Management Studies",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Sector 3, Kharghar",
+      streetAddress: "Plot No. KC1, Sector 3, Kharghar",
       addressLocality: "Navi Mumbai",
       addressRegion: "Maharashtra",
       postalCode: "410210",
@@ -33,33 +33,20 @@ const eventJsonLd = {
   },
   organizer: {
     "@type": "Organization",
-    name: "HackNova",
-    url: "https://github.com/adtytiw",
+    name: "Bharati Vidyapeeth (Deemed to be University), Department of Management Studies",
+    url: "https://www.bvduhacknova.in",
   },
   image: "/og-image.png",
   url: "/",
   keywords:
     "HackNova, hackathon, Hack the Hackers, coding hackathon, Navi Mumbai, BVDU",
-  subEvent: {
-    "@type": "Hackathon",
-    name: "HackNova 2027 Hackathon",
-    description:
-      "A 36-hour hackathon at Bharati Vidyapeeth Campus. Build innovative projects, win from a ₹1.45 Lakhs prize pool.",
-    startDate: "2027-01-10T09:00:00+05:30",
-    endDate: "2027-01-11T21:00:00+05:30",
-    url: "/hackathon",
-    location: {
-      "@type": "Place",
-      name: "Bharati Vidyapeeth Campus",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Sector 3, Kharghar",
-        addressLocality: "Navi Mumbai",
-        addressRegion: "Maharashtra",
-        postalCode: "410210",
-        addressCountry: "IN",
-      },
-    },
+  isAccessibleForFree: false,
+  offers: {
+    "@type": "Offer",
+    price: "1000",
+    priceCurrency: "INR",
+    availability: "https://schema.org/InStock",
+    url: "https://unstop.com/o/DvVI6SX?lb=oOvtANg1",
   },
 };
 
@@ -67,7 +54,7 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "HackNova",
-  url: "https://github.com/adtytiw",
+  url: "https://www.bvduhacknova.in",
   logo: "/hacknova-logo.png",
   sameAs: [],
 };
@@ -90,6 +77,16 @@ export default function Home() {
       <EligibilitySection />
       <RulesSection />
       <FAQSection />
+      {/*
+        TEMPLATE LIBRARY — intentionally not imported.
+        Reusable references live in src/components:
+        bvdu-home, bvdu-home-top, hero, inspiration-home-hero, tba-hero,
+        article-card, bitdevs-card, blog-preview, home-blog-preview,
+        home-livestream-preview, home-sponsors, logo-description,
+        speaker-card, speaker-strip, floating-socials, ticket-notice,
+        ui/table, logo-constants, sponsors-constants, speakers-constants.
+        Legacy event data: src/data/hackathon.ts.
+      */}
       {/* Demo use case: restore the homepage livestream preview here. */}
       {/* <HomeLivestreamPreview /> */}
       {/* Demo use case: restore featured speakers here when the homepage needs them. */}

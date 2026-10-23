@@ -1,3 +1,4 @@
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 export const LOGO_DESCRIPTION = {
   title: "Pixelated Hero Breaking Chains",
   description:

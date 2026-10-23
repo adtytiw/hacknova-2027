@@ -9,9 +9,9 @@ export const eligibilityItems: EligibilityItem[] = [
     id: "eligibility",
     question: "Eligibility Criteria — Who Can Apply",
     points: [
-      "Students from any recognized institute across India.",
-      "Includes Undergraduate (UG), Postgraduate (PG), and Junior College (11th & 12th) students.",
-      "Industry professionals, working individuals, and start-up teams are also eligible to participate.",
+      "Open to students from any recognized institute across India.",
+      "Undergraduate (UG) and Postgraduate (PG) students are eligible to participate.",
+      "Participants must be currently enrolled students; industry professionals and start-up teams are not eligible.",
     ],
   },
   {

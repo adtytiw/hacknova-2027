@@ -20,7 +20,8 @@ export interface RulePhase {
 
 export const generalRules: string[] = [
   "All submissions must be original and created during the event.",
-  "Teams must use the official PPT template for Idea-Problem Statements Submission.",
+  "Teams must submit their Phase 1 idea deck as a PDF or PPTX file, using the official template.",
+  "Phase 1 submission files must be 50 MB or smaller.",
   "Plagiarism, misconduct, or violation of code of conduct will lead to disqualification.",
   "Judges' decisions will be final and binding.",
 ];
@@ -44,7 +45,7 @@ export const phaseRules: RulePhase[] = [
         heading: "Rules",
         points: [
           "Teams must consist of 2-4 members (and not more than 4) (from same or different institutes in India).",
-          "Teams submit a Problem Statement + Idea + Solution in the PPT template.",
+          "Teams submit a Problem Statement + Idea + Solution as a PDF or PPTX file (max 50 MB).",
         ],
       },
       {

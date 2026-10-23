@@ -33,7 +33,7 @@ const mascotVariants: Variants = {
   },
 };
 
-const EVENT_DATE = "Jan 10-11, 2027";
+const EVENT_DATE = "Feb 6-7, 2027";
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -148,7 +148,7 @@ export function Hero() {
           >
             <div className="flex min-w-0 flex-col gap-0.5 py-3.5">
               <span className="text-[clamp(1.125rem,5.64vw,1.375rem)] leading-none font-bold tracking-[-0.02em]">
-                Jan 10–11
+                Feb 6–7
               </span>
               <span className="text-[clamp(11px,3.33vw,13px)] text-[#9ba19d]">Navi Mumbai</span>
             </div>
@@ -312,7 +312,7 @@ const keyDetails = [
   { label: "Date", value: EVENT_DATE, icon: Clock },
   { label: "Duration", value: "36 Hours", icon: Rocket },
   { label: "Entry Fee", value: "₹1,000", icon: Wallet },
-  { label: "Team Size", value: "4 Members", icon: Users },
+  { label: "Team Size", value: "2-4 Members", icon: Users },
   { label: "Format", value: "In-Person Only", icon: Code },
 ];
 

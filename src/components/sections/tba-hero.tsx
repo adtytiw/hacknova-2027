@@ -1,4 +1,5 @@
 "use client";
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 
 import { motion, type Variants } from "motion/react";
 import { Background } from "@/components/animations/background";

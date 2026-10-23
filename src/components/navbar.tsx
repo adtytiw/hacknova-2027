@@ -9,10 +9,11 @@ import { UserPlus } from "lucide-react";
 
 const EVENT_DETAILS = {
   title: "HackNova 2027",
-  description: "HackNova 2027 event details will be announced soon.",
-  location: "Bharati Vidyapeeth Deemed University",
-  start: "20270110T090000",
-  end: "20270111T180000",
+  description:
+    "HackNova 2027, a 36-hour national-level hackathon at BVDU Department of Management Studies, Navi Mumbai.",
+  location: "Bharati Vidyapeeth (Deemed to be University), Department of Management Studies",
+  start: "20270206T080000",
+  end: "20270207T180000",
 };
 
 function eventParams() {
@@ -347,20 +348,26 @@ export function Navbar() {
           className="bg-surface/60 border-border/50 flex items-center justify-between rounded-2xl border px-4 py-2 shadow-lg shadow-black/20 backdrop-blur-xl md:px-6 md:py-4"
         >
           {/* Logo */}
-          <Link ref={logoRef} href="/" className="group flex shrink-0 items-center gap-3">
-            <div className="relative h-10 w-10 overflow-hidden rounded-xl">
+          <Link
+            ref={logoRef}
+            href="/"
+            className="group flex shrink-0 items-center gap-2.5"
+          >
+            <div className="relative h-8 w-8 overflow-hidden">
               <Image
-                src="/hacknova-logo.png"
-                alt="HackNova 2027"
+                src="/newLogoHackNova.png"
+                alt="HackNova 2.0 logo"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
-            <div>
-              <p className="text-foreground text-sm leading-tight font-semibold">HackNova</p>
-              <p className="text-muted text-xs">2027</p>
-            </div>
+            <p className="flex items-baseline gap-1.5 whitespace-nowrap">
+              <span className="text-foreground text-base leading-none font-semibold tracking-tight">
+                HackNova
+              </span>
+              <span className="text-foreground/50 text-base leading-none font-normal">2.0</span>
+            </p>
           </Link>
 
           {/* Desktop links */}

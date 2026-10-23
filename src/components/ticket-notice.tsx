@@ -1,21 +1,20 @@
 "use client";
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 const STORAGE_KEY = "hacknova-ticket-notice-dismissed";
 const REGISTER_URL = "https://unstop.com/o/DvVI6SX?lb=oOvtANg1";
 
 export function TicketNotice() {
-  const [visible, setVisible] = useState(true);
-
-  useEffect(() => {
+  const [visible, setVisible] = useState(() => {
     try {
-      setVisible(!localStorage.getItem(STORAGE_KEY));
+      return !localStorage.getItem(STORAGE_KEY);
     } catch {
-      setVisible(true);
+      return true;
     }
-  }, []);
+  });
 
   const dismiss = () => {
     setVisible(false);

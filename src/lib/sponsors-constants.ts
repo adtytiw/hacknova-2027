@@ -1,3 +1,4 @@
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 export type Sponsor = {
   name: string;
   logo: string;

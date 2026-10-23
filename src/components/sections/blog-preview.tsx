@@ -1,4 +1,5 @@
 "use client";
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "motion/react";

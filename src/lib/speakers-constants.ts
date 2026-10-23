@@ -1,3 +1,4 @@
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 export function generateSlug(name: string): string {
   return name
     .toLowerCase()

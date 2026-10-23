@@ -59,7 +59,8 @@ export function PrizesSection() {
             Prize Pool
           </motion.h2>
           <motion.p variants={itemVariants} className="text-muted mx-auto max-w-2xl">
-            ₹1.45 Lakhs in cash prizes and special category awards.
+            ₹1.45 Lakhs in cash prizes, special category awards, and certificates for all
+            participants.
           </motion.p>
         </motion.div>
 

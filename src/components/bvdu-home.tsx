@@ -1,3 +1,4 @@
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 const domains = [
   ["Sustainable Innovation & Green Technology", "Innovating retail packaging for maximum shelf impact and sustainability."],
   ["Food Safety & Public Health", "How might we make street food safer without losing its soul?"],
@@ -13,7 +14,7 @@ const timeline = [
   ["1st Week of December", "Phase 1 Evaluation", "Shortlisted teams are announced."],
   ["2nd Week of December", "Mentoring Session 1", "The first mentoring session for shortlisted teams."],
   ["3rd Week of December", "Mentoring Session 2", "The second mentoring session for shortlisted teams."],
-  ["10 Jan - 11 Jan 2026", "Grand Finale", "36-hour intensive hackathon begins."],
+  ["6 Feb - 7 Feb 2027", "Grand Finale", "36-hour intensive hackathon begins."],
 ];
 
 const rules = [

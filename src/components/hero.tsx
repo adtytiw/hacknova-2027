@@ -1,4 +1,5 @@
 "use client";
+// TEMPLATE ONLY — kept for future reuse; not imported by the live site.
 
 import Image from "next/image";
 import { motion, type Variants } from "motion/react";
