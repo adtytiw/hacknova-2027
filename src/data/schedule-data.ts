@@ -45,14 +45,14 @@ export const schedule: ScheduleDay[] = [
         title: "Team Registration & Initial Idea Submission (PPT) Opens",
       },
       {
-        start: "20 Nov 2026",
-        end: "20 Nov 2026",
+        start: "10 Dec 2026",
+        end: "10 Dec 2026",
         type: "talk",
         title: "Last Date for Registration & Idea Submission",
       },
       {
-        start: "27 Nov 2026",
-        end: "27 Nov 2026",
+        start: "10 Dec 2026",
+        end: "10 Dec 2026",
         type: "award",
         title: "Phase 1 Evaluation Results & Shortlisted Teams Announcement",
       },

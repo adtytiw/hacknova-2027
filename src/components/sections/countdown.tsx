@@ -46,8 +46,8 @@ function Colon() {
   );
 }
 
-const TARGET_DATE = new Date("2026-11-20T23:59:59+05:30").getTime();
-const TARGET_DATE_LABEL = "Nov 20, 2026";
+const TARGET_DATE = new Date("2026-12-10T23:59:59+05:30").getTime();
+const TARGET_DATE_LABEL = "Dec 10, 2026";
 
 function calculateTimeLeft() {
   const now = new Date().getTime();

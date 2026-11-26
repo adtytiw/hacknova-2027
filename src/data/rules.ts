@@ -64,7 +64,7 @@ export const phaseRules: RulePhase[] = [
         ],
       },
     ],
-    deadline: "20th November 2026",
+    deadline: "10th December 2026",
     evaluationHeading: "Evaluation Criteria (Phase 1)",
     evaluation: [
       { label: "Relevance & clarity of problem", weight: "30%" },
